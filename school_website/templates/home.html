@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | uMinathi Christian-College</title>
+    <link rel="icon" href="../static/images/logo.jpg" type="image/png">
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+    <!-- Top Bar -->
+    <header>
+        <div class="top-bar">
+            <!-- Left: Logo + School Name -->
+            <div class="top-left">
+                <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="School Logo" class="logo">
+                <h1 class="school-name">uMinathi Christian College</h1>
+            </div>
+
+            <!-- Right: Navigation + Hamburger -->
+            <div class="top-right">
+                <!-- Hamburger icon for mobile -->
+                <span class="hamburger" onclick="toggleMenu()">☰</span>
+
+                <!-- Navigation links -->
+                <div class="nav-links" id="navLinks">
+                    <a class="nav-item" href="/history">History</a>
+                    <a class="nav-item" href="/culture">Culture</a>
+                    <a class="nav-item" href="/about">About Us</a>
+                    <a class="nav-item" href="/contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <script>
+    // Function to toggle nav links on mobile
+    function toggleMenu() {
+        var nav = document.getElementById("navLinks");
+        nav.classList.toggle("show");
+    }
+    </script>
+
+    <!-- Hero Section with Logo -->
+    <div class="hero-container">
+        <img src="{{ url_for('static', filename='images/home.jpg') }}" alt="School Picture" class="hero-image">
+        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="School Logo" class="hero-logo">
+    </div>
+
+    <!-- Black Dashboard Below Hero -->
+    <div class="dashboard">
+        <a class="dash-item" href="/sports">Sport</a>
+        <a class="dash-item" href="/news">News</a>
+        <a class="dash-item" href="/culture">Culture</a>
+        <a class="dash-item" href="/academics">Academics</a>
+        <a class="dash-item" href="/report">Reports</a>
+        <!-- Maker text -->
+        <div class="dash-item maker-text">Website Designer  @Trusty Software</div>
+    </div>
+
+</body>
+</html>

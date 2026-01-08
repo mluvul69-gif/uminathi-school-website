@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our History | uMinathi Christian School</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="icon" href="../static/images/logo.jpg" type="image/png">
+</head>
+<body>
+    <!-- Top Bar -->
+    <header>
+        <div class="top-bar">
+            <!-- Left: Logo + School Name -->
+            <div class="top-left">
+                <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="School Logo" class="logo">
+                <h1 class="school-name">uMinathi Christian College</h1>
+            </div>
+
+            <!-- Right: Navigation + Hamburger -->
+            <div class="top-right">
+                <!-- Hamburger icon for mobile -->
+                <span class="hamburger" onclick="toggleMenu()">☰</span>
+
+                <!-- Navigation links -->
+                <div class="nav-links" id="navLinks">
+                    <a class="nav-item" href="/">Home</a>
+                    <a class="nav-item" href="/history">History</a>
+                    <a class="nav-item" href="/contact">Contact</a>
+                    <a class="nav-item" href="/news">News</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <script>
+    // Function to toggle nav links on mobile
+    function toggleMenu() {
+        var nav = document.getElementById("navLinks");
+        nav.classList.toggle("show");
+    }
+    </script>
+
+    <!-- Page Title -->
+    <section class="page-header">
+        <h2>Our History</h2>
+    </section>
+
+    <!-- History Content -->
+    <section class="history-section">
+
+        <!-- Text -->
+        <div class="history-text">
+            <p>
+                uMinathi Christian School was established with the vision of
+                providing quality Christian-based education to learners within
+                the local community. The school was founded in response to the
+                need for accessible secondary education for learners who were
+                previously required to travel long distances to attend school.
+            </p>
+
+            <p>
+                In its early years, uMinathi Christian School operated from
+                rented facilities while laying the foundation for future growth.
+                Through the support of community leaders, donors, and
+                philanthropic organisations, the school was later able to move
+                into its own purpose-built premises.
+            </p>
+
+            <p>
+                The development of the school was made possible through
+                partnerships with charitable foundations and the generosity of
+                the local traditional authority, who donated land to support the
+                project. The completed facilities provided classrooms designed
+                to create a safe and supportive learning environment.
+            </p>
+
+            <p>
+                Beginning with lower secondary grades, the school gradually
+                expanded its academic offerings as learner enrolment increased.
+                uMinathi Christian School continues to grow with a commitment to
+                academic excellence, discipline, moral values, and service to
+                the community.
+            </p>
+        </div>
+
+        <!-- Image -->
+        <div class="history-image">
+            <img src="{{ url_for('static', filename='images/history.jpg') }}" alt="Early development of uMinathi Christian School">
+            <p class="image-caption">
+                uMinathi Christian School during its early development
+            </p>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="site-footer">
+        <p>© {{ current_year }} uMinathi Christian College. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

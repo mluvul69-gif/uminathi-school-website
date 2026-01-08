@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Culture - uMinathi Christian College</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="icon" href="../static/images/logo.png" type="image/png">
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <header>
+        <div class="top-bar">
+            <!-- Left: Logo + School Name -->
+            <div class="top-left">
+                <img src="../static/images/logo.png" alt="School Logo" class="logo">
+                <h1 class="school-name">uMinathi Christian College</h1>
+            </div>
+            <span class="hamburger" onclick="toggleMenu()">☰</span>
+            <!-- Right: Nav Items -->
+            <div class="top-right" id="navLinks">
+                <a class="nav-item" href="/">Home</a>
+                <a class="nav-item" href="/history">History</a>
+                <a class="nav-item" href="/contact">Contact</a>
+                <a class="nav-item" href="/news">News</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="hero-container">
+        <img src="../static/images/culture.jpg" alt="School Culture" class="hero-image">
+    </div>
+
+    <!-- Page Title -->
+    <div class="page-title">
+        <h2>Our School Culture</h2>
+    </div>
+
+    <!-- Culture Section -->
+    <div class="history-section">
+        <div class="history-text">
+            <p>
+                At uMinathi Christian College, we pride ourselves on a culture that emphasizes academic excellence,
+                spiritual growth, and community involvement. Our students are encouraged to participate in a variety
+                of cultural activities including music, drama, debate, and public speaking.
+            </p>
+            <p>
+                Respect, discipline, and teamwork are core values embedded in our daily routines. Our school hosts
+                annual cultural festivals and inter-school competitions that celebrate the talents and creativity
+                of our learners.
+            </p>
+        </div>
+        <div class="history-image">
+            <img src="../static/images/logo.png" alt="School Cultural Activity">
+            <div class="image-caption">Students participating in a cultural festival</div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <p>© {{ current_year }} uMinathi Christian College. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

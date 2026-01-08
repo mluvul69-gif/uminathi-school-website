@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page_title }} - uMinathi Christian College</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='images/logo.png') }}" type="image/png">
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header>
+    <div class="top-bar">
+        <div class="top-left">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="School Logo" class="logo">
+            <h1 class="school-name">uMinathi Christian College</h1>
+        </div>
+
+        <div class="top-right">
+            <span class="hamburger" onclick="toggleMenu()">☰</span>
+
+            <div class="nav-links" id="navLinks">
+                <a class="nav-item" href="/">Home</a>
+                <a class="nav-item" href="/sports">Sports</a>
+                <a class="nav-item" href="/culture">Culture</a>
+                <a class="nav-item" href="/academics">Academics</a>
+                <a class="nav-item" href="/reports">Reports</a>
+                <a class="nav-item" href="/history">History</a>
+                <a class="nav-item" href="/about">About Us</a>
+                <a class="nav-item" href="/contact">Contact</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="hero-container">
+    <img src="../static/images/news.jpg" alt="School Picture" class="hero-image">
+</div>
+<!-- ================= PAGE TITLE ================= -->
+<div class="page-title">
+    <h2>{{ page_title | upper }}</h2>
+    <h3 class="sub-title">{{ page_subtitle }}</h3>
+    <hr class="sub-title-line">
+</div>
+
+<!-- ================= POSTS ================= -->
+<div class="posts-container">
+
+    {% if posts %}
+        {% for post in posts %}
+        <div class="post-card">
+
+            {% if post.image %}
+            <img 
+                src="{{ url_for('static', filename='uploads/' ~ post.image) }}" 
+                class="post-image" 
+                alt="Post image">
+            {% endif %}
+
+            <div class="post-content">
+                <h3 class="post-title">{{ post.title }}</h3>
+
+                <p class="post-text">
+                    {{ post.content }}
+                </p>
+
+                <div class="post-meta">
+                    <span class="post-date">
+                        Posted on {{ post.created_at }}
+                    </span>
+
+                    {% if post.category %}
+                    <span class="post-category">
+                        {{ post.category }}
+                    </span>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    {% else %}
+        <p class="no-posts">
+            No posts available yet for this category.
+        </p>
+    {% endif %}
+
+</div>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer">
+    <p>© {{ current_year }} uMinathi Christian College. All rights reserved.</p>
+</footer>
+
+<!-- ================= JS ================= -->
+<script>
+function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("show");
+}
+</script>
+
+</body>
+</html>
+
